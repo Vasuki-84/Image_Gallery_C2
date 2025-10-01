@@ -5,34 +5,13 @@ const ImageGallery = () => {
     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
     "https://i.pinimg.com/736x/4b/0d/c1/4b0dc1564d010187627c04f63c91cba9.jpg",
     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
     "https://i.pinimg.com/736x/4b/0d/c1/4b0dc1564d010187627c04f63c91cba9.jpg",
     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
     "https://i.pinimg.com/736x/4b/0d/c1/4b0dc1564d010187627c04f63c91cba9.jpg",
-    "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-    "https://i.pinimg.com/736x/4b/0d/c1/4b0dc1564d010187627c04f63c91cba9.jpg",
-    "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-    "https://i.pinimg.com/736x/4b/0d/c1/4b0dc1564d010187627c04f63c91cba9.jpg",
-    "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-    "https://i.pinimg.com/736x/4b/0d/c1/4b0dc1564d010187627c04f63c91cba9.jpg",
-    "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-    "https://i.pinimg.com/736x/4b/0d/c1/4b0dc1564d010187627c04f63c91cba9.jpg",
-    "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-     "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-    "https://i.pinimg.com/736x/4b/0d/c1/4b0dc1564d010187627c04f63c91cba9.jpg",
-    "https://i.pinimg.com/736x/25/9e/bf/259ebfeedddf4c395fee7ff028c4166a.jpg",
-    
-
-    
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const imagesPerSlide = 6;
+  const imagesPerSlide = 1;
 
   const nextSlide = () => {
     setCurrentIndex((prev) =>
@@ -50,10 +29,11 @@ const ImageGallery = () => {
 
   return (
     <div className="min-h-screen  bg-gray-900  w-full ">
-      
-      <div className=" flex justify-center items-center flex flex-col p-4">
-        <h2 className="text-center text-3xl text-Bold mb-5 text-white">Image Gallery </h2>
-        <div className="w-[650px] text-center bg-gradient-to-br from-gray-800 to-gray-700 p-5 rounded-lg shadow-xl overflow-hidden border border-gray-600">
+      <div className=" flex justify-center items-center flex-col flex flex-col p-5">
+        <h2 className="text-center text-3xl text-Bold mb-5 text-white">
+          Image Gallery
+        </h2>
+        <div className="w-full max-w-[750px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[650px] text-center bg-gradient-to-br from-gray-800 to-gray-700 p-5 rounded-lg shadow-xl overflow-hidden border border-gray-600">
           <div
             className="flex transition-transform duration-500"
             style={{
@@ -67,7 +47,7 @@ const ImageGallery = () => {
             }).map((_, groupIndex) => (
               <div
                 key={groupIndex}
-                className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full flex-shrink-0 px-5"
+                className="grid grid-cols-1 gap-4 w-full flex-shrink-0 px-5"
               >
                 {images
                   .slice(
@@ -88,7 +68,7 @@ const ImageGallery = () => {
 
           <div className="mt-4">
             <button
-              className="px-4 py-2 bg-gray-600 text-white rounded-md mr-2 hover:bg-gray-500"
+              className="px-5 py-2 bg-gray-600 text-white rounded-md mr-2 hover:bg-gray-500"
               onClick={prevSlide}
             >
               Previous
